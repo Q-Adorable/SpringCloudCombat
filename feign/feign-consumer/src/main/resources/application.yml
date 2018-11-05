@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: feign-consumer
+server:
+  port: 9001
+eureka:
+  instance:
+    hostname: localhost
+  client:
+     serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+hello-service:
+  ribbon:
+    ConnectionTimeout: 500
+    ReadTimeout: 2000
+    OkToRetryOnAllOperatotions: true
+    MaxAutoRetriesNextServer: 2
+    MaxAutoRetries: 1
+feign:
+  hystrix:
+    enabled: true
+logging:
+  level:
+    com:
+      example:
+        feignconsumer:
+          service:
+            HelloService: DEBUG

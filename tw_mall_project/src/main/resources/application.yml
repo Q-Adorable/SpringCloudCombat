@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo2_product?characterEncoding=utf-8
+    username: root
+    password: 123456
+  application:
+    name: user-service
+  jpa:
+    show-aql: true
+    database: mysql
+server:
+  port: 8082
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
